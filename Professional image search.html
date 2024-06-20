@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Art |Professional image search</title>
+  <link rel="stylesheet" href="Professional image search.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    .sidebar.open {
+      right: 0 !important;
+    }
+    /* يمكن إضافة المزيد من الأنماط هنا إذا لزم الأمر */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Art</h1>
+  </header>
+  <main>
+    <section id="search">
+      <h2>     </h2>
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Enter search terms">
+        <button type="submit">search</button>
+      </form>
+    </section>
+    <section id="results">
+      <h2></h2>
+      <ul></ul>
+    </section>
+  </main>
+  <footer>
+    <button class="menu-btn" onclick="toggleMenu()"><span class="menu-icon">&#9776;</span></button>
+    <div class="sidebar" id="sidebar">
+      <a href="index.html">Homepage</a>
+    </div>
+    <div class="overlay" onclick="closeMenu()"></div>
+  </footer>
+
+  <div id="Loading" class="loader"></div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.querySelector('.overlay').style.display = document.getElementById('sidebar').classList.contains('open') ? 'block' : 'none';
+    }
+
+    function closeMenu() {
+      document.getElementById('sidebar').classList.remove('open');
+      document.querySelector('.overlay').style.display = 'none';
+    }
+  </script>
+
+  <script>
+    // JavaScript code لوظيفة البحث
+    const searchForm = document.getElementById("search-form");
+    const searchInput = document.getElementById("search-input");
+    const resultList = document.querySelector("#results ul");
+
+    searchForm.addEventListener("submit", async (event) => {
+      event.preventDefault(); // منع إرسال النموذج افتراضيًا
+
+      const searchTerm = searchInput.value;
+      const accessKey = "nhzorvjGtuh_AVe0SNiOQ_pjNkFFKGQLYILF-sbVVvA"; //مفتاح API
+      const baseUrl = "https://api.unsplash.com/search/photos"; 
+      const loader = document.getElementById("Loading")
+
+      resultList.innerHTML = ""; // مسح النتائج السابقة
+
+      if (!searchTerm.trim()) {
+        alert('الرجاء إدخال مصطلح البحث.');
+        return;
+      }
+
+    
+      try {
+        loader.style.display = "grid"
+        const response = await fetch(`${baseUrl}?query=${encodeURIComponent(searchTerm)}&client_id=${accessKey}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        if (data.results.length === 0) {
+          resultList.innerHTML = "<li>لم يتم العثور على نتائج.</li>";
+        } else {
+          data.results.forEach((image) => {
+            const listItem = document.createElement("li");
+            const imageLink = document.createElement("a");
+            const imageUrl = image.urls.regular;
+
+            imageLink.href = imageUrl;
+            imageLink.target = "_blank"; // فتح الصورة في علامة تبويب جديدة
+            imageLink.innerHTML = `<img src="${imageUrl}" alt="${image.alt_description}">`;
+
+            listItem.appendChild(imageLink);
+            resultList.appendChild(listItem);
+          });
+        }
+      } catch (error) {
+        console.error("Error retrieving photos:", error);
+        resultList.innerHTML = `<li> An error occurred while searching: ${error.message}</li>`;
+      }
+      loader.style.display = "none"
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+html {
+  font-size: 1.5vw; /* يمكنك تغيير قيمة النسبة حسب احتياجاتك */
+}
+body {
+  background: linear-gradient(to bottom, #222 0%, #000d1f 80%); /* تعريف التدرج اللوني */
+  color: #fff;
+  font-family: "Lora", serif;
+  transition: background 0.5s ease-in-out;
+  background-attachment: fixed; /* إضافة الخاصية */
+  background-size: 100% 100%; /* إضافة الخاصية */
+}
+
+
+body.dark-mode {
+  background: #000d1f;
+  color: #f00;
+}
+
+header {
+  background-image: url("**هنا الصورة**");
+  color: #fff;
+  padding: 2vw;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4vw;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0.5vw 0.5vw 1vw #b71c1c;
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+main {
+  padding: 4vw;
+  background: url("**هنا الصورة **"), repeat;
+}
+
+section {
+  margin-bottom: 2vw;
+  padding: 1.3vw;
+  border: 0.1vw solid #666;
+  box-shadow: 0 0 0.5vw #333;
+  transition: box-shadow 0.3s ease-in-out;
+  animation: section-fade-in 0.5s ease-in-out;
+}
+
+section:hover {
+  box-shadow: 0 0 1vw #f00;
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+#about p {
+  line-height: 1.5;
+  color: #ddd;
+  text-align: justify;
+  font-size: 1.8vw;
+}
+
+#works ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#works li {
+  margin: 2vw;
+  width: 24vw;
+  height: 24vw;
+  border: 0.1vw solid #bdbdbd6c;
+  box-shadow: 0 0 0.9vw #ff0000cb;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2vw;
+}
+
+#works img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2vw;
+  transition: all 0.5s;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.sidebar {
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  top: 0;
+  right: -15%;
+  background-color: #323233;
+  padding-top: 2vw;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.sidebar a {
+  padding: 1vw 1.5vw;
+  display: block;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.sidebar a:before,
+.sidebar a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0.1vw;
+  background-color: rgba(223, 223, 223, 0.281);
+}
+
+.sidebar a:before {
+  top: 0;
+}
+
+.sidebar a:after {
+  bottom: 0;
+}
+
+.sidebar a:hover {
+  background-color: #4c4e58;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 1vw;
+  right: 0.5vw;
+  background-color: #33333300;
+  color: white;
+  padding: 2vw 0.8vw;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  color: rgb(244, 246, 255);
+  font-size: 2vw;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  display: none;
+}
+
+footer p {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+footer p span {
+  display: inline-block;
+  width: 50%;
+  font-size: 0.8vw;
+  color: #909199;
+}
+
+footer p span.copyright-year {
+  text-align: right;
+  color: #999;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  display: inline-block;
+  margin: 0 0.6vw;
+}
+
+footer a img {
+  width: 2vw;
+  height: 2vw;
+}
+body {
+  margin: 20px;
+  font-size: 1.6rem;
+}
+
+#header {
+  width: 100%;
+  padding: 20px;
+}
+
+.main {
+  padding: 20px;
+}
+
+#footer {
+  text-align: center;
+  padding: 20px;
+}
+.main {
+  height: 100vh;
+}
+
+/* استعلامات الوسائط للشاشات الصغيرة (حتى 576 بكسل) */
+@media only screen and (max-width: 576px) {html {
+  font-size: 2.43vw; /* يمكنك تغيير قيمة النسبة حسب احتياجاتك */
+}
+body {
+  background: linear-gradient(to bottom, #222 0%, #000d1f 80%); /* تعريف التدرج اللوني */
+  color: #fff;
+  font-family: "Lora", serif;
+  transition: background 0.5s ease-in-out;
+  background-attachment: fixed; /* إضافة الخاصية */
+  background-size: 100% 100%; /* إضافة الخاصية */
+}
+
+
+body.dark-mode {
+  background: #000d1f;
+  color: #f00;
+}
+
+h1 {
+  font-size: 11vw;
+  margin: 4vw;
+  color: #fff;
+  text-shadow: 0.5vw 0.5vw 1vw #b71c1c;
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+section {
+  margin-bottom: 10vw;
+  padding: 2.3vw;
+  border: 0.1vw solid #666;
+  box-shadow: 0 0 0.5vw #333;
+  transition: box-shadow 0.3s ease-in-out;
+  animation: section-fade-in 0.5s ease-in-out;
+}
+
+section:hover {
+  box-shadow: 0 0 1vw #f00;
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+#about p {
+  line-height: 1.6;
+  color: #ddd;
+  text-align: justify;
+  font-size: 4.3vw;
+}
+
+#works ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#works li {
+  margin: 1.4vw;
+  width: 37.5vw;
+  height: 37.5vw;
+  border: 0.1vw solid #bdbdbd6c;
+  box-shadow: 0 0 0.9vw #ff0000cb;
+  overflow: hidden;
+  position: relative;
+  border-radius: 2vw;
+}
+
+#works img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2vw;
+  transition: all 0.5s;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.sidebar {
+  height: 100%;
+  width: 33%;
+  position: fixed;
+  top: 0;
+  right: -33%;
+  background-color: #323233;
+  padding-top: 2vw;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.sidebar a {
+  padding: 1vw 0.8vw;
+  display: block;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.sidebar a:before,
+.sidebar a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0.1vw;
+  background-color: rgba(223, 223, 223, 0.281);
+}
+
+.sidebar a:before {
+  top: 0;
+}
+
+.sidebar a:after {
+  bottom: 0;
+}
+
+.sidebar a:hover {
+  background-color: #4c4e58;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 8vw;
+  right: 1vw;
+  background-color: #33333300;
+  color: white;
+  padding: 2vw 0.8vw;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  color: rgb(244, 246, 255);
+  font-size: 5vw;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  display: none;
+}
+
+footer p {
+  margin: 3vw;
+  font-size: 5vw;
+  width: 100%;
+  text-align: center;
+}
+
+footer p span {
+  display: inline-block;
+  width: 50%;
+  font-size: 0.8vw;
+  color: #909199;
+}
+
+footer p span.copyright-year {
+  text-align: right;
+  color: #999;
+}
+
+footer {
+  display: flex;
+  margin: 10vw;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a {
+  display: inline-block;
+  margin: 0 0.6vw;
+}
+
+footer a img {
+  width: 5vw;
+  height: 5vw;
+  margin: 0.6vw;
+}
+body {
+  margin: 7vw;
+  font-size: 1.6rem;
+}
+
+#header {
+  width: 100%;
+  padding: 20px;
+}
+
+.main {
+  padding: 20px;
+}
+
+#footer {
+  text-align: center;
+  padding: 20px;
+}
+.main {
+  height: 100vh;
+}
+}
+
+/* إضافة الخاصية لتغطية الشاشة بالكامل */
+body {
+  height: 100vh; /* تعيين ارتفاع عنصر body إلى 100vh */
+  margin: 0; /* إزالة الهامش */
+  padding: 0; /* إزالة الحشو */
+}
